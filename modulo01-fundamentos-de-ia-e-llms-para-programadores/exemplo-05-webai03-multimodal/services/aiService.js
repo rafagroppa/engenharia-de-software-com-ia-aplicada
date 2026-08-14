@@ -110,8 +110,7 @@ export class AIService {
 
         this.session = await LanguageModel.create({
             expectedInputs: [
-                { type: "text", languages: ["en"] },
-                { type: "audio" },
+                { type: "text", languages: ["en"] },                
                 { type: "image" },
             ],
             expectedOutputs: [{ type: "text", languages: ["en"] }],

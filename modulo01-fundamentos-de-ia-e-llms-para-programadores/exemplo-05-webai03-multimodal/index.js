@@ -29,7 +29,13 @@ import { FormController } from './controllers/formController.js';
     }
 
     // Get and initialize AI parameters
-    const params = await aiService.getParams();
+    //const params = await aiService.getParams();
+    const params = {
+        temperature: 0.7,
+        topK: 40,
+        maxTokens: 2000,
+        stopSequences: ["\n\n"],
+    }
     view.initializeParameters(params);
 
     // Initialize controller and setup event listeners
