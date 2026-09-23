@@ -10,7 +10,7 @@ export type ModelConfig = {
     port: number;
     models: string[];
     temperature: number;
-    maxTokens: number;
+    maxTokens: number;    
     systemPrompt: string;
 
     provider: {
@@ -27,20 +27,17 @@ export const config: ModelConfig = {
     xTitle: 'SmartModelRouterGateway',
     port: 3000,
     models: [
-        // top 4 para a listagem ordenada por preço
-        'arcee-ai/trinity-large-preview:free',
-
-        // top 3 para listagem de throughput
-        'nvidia/nemotron-3-nano-30b-a3b:free',
+        'google/gemma-4-31b-it:free',
+        'nvidia/nemotron-3.5-lightning:free',
     ],
     temperature: 0.2,
-    maxTokens: 100,
+    maxTokens: 100,    
     systemPrompt: 'You are a helpful assistant.',
     provider: {
         sort: {
-            by: 'throughput',
+            //by: 'throughput',
             // by: 'latency',
-            // by: 'price',
+            by: 'price',
             partition: 'none'
         }
     }
